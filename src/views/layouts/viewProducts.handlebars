@@ -1,0 +1,11 @@
+<h3>Bienvenido: {{email}}</h3>
+<p><a href="/api/sessions/LOGOUT">Cerrar sesión</a></p>
+<div>
+    {{#each products}}
+    <div>
+        <h2>{{this.description}}</h2>
+        <p>Precio: ${{this.price}}</p>
+        <a href="/api/products/{{this._id}}">Ver detalle</a>
+    </div>
+    {{/each}}
+</div>
