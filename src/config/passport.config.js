@@ -1,6 +1,6 @@
 import passport from "passport"
 import local from "passport-local"
-import {createHash, isValidPassword} from "../utils.js"
+import {createHash, isValidPassword} from "../views/utils.js"
 import UserManager from "../controllers/UserManager.js"
 import GitHubStrategy from "passport-github2"
 
@@ -44,8 +44,7 @@ const initializePassword = () => {
             done(null,user)
         })
 
-        passport.use("login", new LocalStrategy({usernemeField: "email"}, async(username, password,done) =>
-        {
+        passport.use("login", new LocalStrategy({usernemeField: "email"}, async(username, password, done) => {
             try{
                 const user = await userMan.findEmail({email:username})
                 if(!user){

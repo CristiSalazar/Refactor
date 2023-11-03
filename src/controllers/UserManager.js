@@ -1,4 +1,4 @@
-import { userModel as usersModel } from "../models/users.model"
+import {userModel as usersModel} from "../models/users.models.js"
 
 class UserManager extends usersModel
 {
